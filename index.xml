@@ -8,19 +8,9 @@
     <language>zh</language>
     <managingEditor>balladpanda@gamil.com (rockpandan(朝俊))</managingEditor>
     <webMaster>balladpanda@gamil.com (rockpandan(朝俊))</webMaster>
-    <lastBuildDate>Sat, 18 Mar 2017 20:53:54 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About me</title>
-      <link>https://rockpanda.github.io/about/</link>
-      <pubDate>Sat, 18 Mar 2017 20:53:54 +0800</pubDate>
-      <author>balladpanda@gamil.com (rockpandan(朝俊))</author>
-      <guid>https://rockpanda.github.io/about/</guid>
-      <description>Info Jimmy Song（宋净超） Beijing, China 🇨🇳 CNCF Ambassador Career iFlytek （科大讯飞) TalkingData Ant Financial（蚂蚁金服）current➡️招贤纳士 Bio Jimmy Song is a Developer Advocate on Cloud Native at Ant Financial. He has</description>
-    </item>
     
   </channel>
 </rss>
