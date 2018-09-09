@@ -13,10 +13,28 @@
     
     <item>
       <title></title>
-      <link>https://rockpanda.github.io/categories/devops/jumpserver-deploydoc/</link>
+      <link>https://rockpanda.github.io/categories/devops/page/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>balladpanda@gmail.com (rockpanda)</author>
-      <guid>https://rockpanda.github.io/categories/devops/jumpserver-deploydoc/</guid>
+      <guid>https://rockpanda.github.io/categories/devops/page/test/</guid>
+      <description>this&amp;rsquo;s test!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://rockpanda.github.io/page/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>balladpanda@gmail.com (rockpanda)</author>
+      <guid>https://rockpanda.github.io/page/test/</guid>
+      <description>this&amp;rsquo;s test!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://rockpanda.github.io/posts/jumpserver-deploydoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>balladpanda@gmail.com (rockpanda)</author>
+      <guid>https://rockpanda.github.io/posts/jumpserver-deploydoc/</guid>
       <description>1 部署概述 该部署文档建议读者拥有Linux相关的基础，若没有相应的基础请先了解相关文档及工具，文档主要用于帮助大家理解整个部署流程、部署原则、部署相关注意事项等，简化部署难度，从而顺利部署使用上jumpserve。，若在部署过程中遇到了问题请先查看FAQ章节的内容，若没有您遇到的问题，欢迎您通过Github、QQ群等向我们反馈。
 我们把部署过程分为以下几个阶段： 1. 安装基础环境（Python、Redis、mariadb等） 2. 安装 Jumpserver 3. 安装 COCO 4. 安装 Web Terminal （前端: Luna） 5. 安装 window支持组件 6. 配置 Nginx整合各个组件
 1.1 部署原则  建议是全新安装的centos7操作系统 部署jumpserver所在的服务器能够上互联网 严格按照部署手册执行  1.2 服务器配置建议 建议最低配置4G内存、2个CPU线程、80G磁盘空间。
