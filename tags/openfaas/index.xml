@@ -6,6 +6,8 @@
     <description>Recent content in Openfaas on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Tue, 26 Dec 2017 21:16:04 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/openfaas/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>OpenFaaS快速入门指南</title>
       <link>https://rockpanda.github.io/posts/openfaas-quick-start/</link>
       <pubDate>Tue, 26 Dec 2017 21:16:04 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/openfaas-quick-start/</guid>
       <description>OpenFaaS快速入门指南 OpenFaaS一款高人气的开源的faas框架，可以直接在Kubernetes上运行，也可以基于Swarm或容器</description>
     </item>

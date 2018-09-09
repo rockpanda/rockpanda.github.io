@@ -6,6 +6,8 @@
     <description>Recent content in Dns on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Wed, 12 Apr 2017 13:04:45 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Kubernetes安装之kubedns配置</title>
       <link>https://rockpanda.github.io/posts/kubernetes-kubedns-installation/</link>
       <pubDate>Wed, 12 Apr 2017 13:04:45 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/kubernetes-kubedns-installation/</guid>
       <description>前言 这是和我一步步部署kubernetes集群项目(fork自opsnull)中的一篇文章，下文是结合我之前部署kubernetes的过程产</description>
     </item>

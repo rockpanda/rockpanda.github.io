@@ -6,6 +6,8 @@
     <description>Recent content in Slides on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Tue, 17 Oct 2017 21:04:21 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/slides/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Cloud Native幻灯片图书资料等汇总</title>
       <link>https://rockpanda.github.io/posts/cloud-native-slides-share/</link>
       <pubDate>Tue, 17 Oct 2017 21:04:21 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/cloud-native-slides-share/</guid>
       <description>很多人抱怨网上能够找到的关于Cloud Native云原生的资料匮乏，因此我专门整理了目前我所保存的资料到这样一个GitHub库中，日后会不断</description>
     </item>

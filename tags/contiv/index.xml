@@ -6,6 +6,8 @@
     <description>Recent content in Contiv on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Thu, 09 Mar 2017 11:28:34 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/contiv/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>思科开源docker网络插件Contiv简介</title>
       <link>https://rockpanda.github.io/posts/contiv-guide/</link>
       <pubDate>Thu, 09 Mar 2017 11:28:34 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/contiv-guide/</guid>
       <description>Contiv是思科开发的docker网络插件，从2015年就开源了，业界通常拿它和Calico比较。貌似Contiv以前还开发过volume</description>
     </item>

@@ -6,6 +6,8 @@
     <description>Recent content in Python on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Tue, 15 Aug 2017 22:58:37 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Cloud Native Python中文版（Python云原生）</title>
       <link>https://rockpanda.github.io/posts/cloud-native-python/</link>
       <pubDate>Tue, 15 Aug 2017 22:58:37 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/cloud-native-python/</guid>
       <description>继 Cloud Native Go 之后又一本关于 Cloud Native 的力作已经登上了我的写作日程，这次是基于 Python 构建微服务和云原生 Web 应用程序，书名叫作 Cloud Native Python。 下面是它的英文原</description>
     </item>

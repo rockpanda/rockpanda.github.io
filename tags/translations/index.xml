@@ -6,6 +6,8 @@
     <description>Recent content in Translations on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Mon, 19 Mar 2018 23:43:33 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/translations/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>为什么我们需要Istio？</title>
       <link>https://rockpanda.github.io/posts/why-do-we-need-istio/</link>
       <pubDate>Mon, 19 Mar 2018 23:43:33 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/why-do-we-need-istio/</guid>
       <description>本文译自Istio Why do I need it? 译者Jimmy Song 我最近没有多少时间去玩k8s，并承认Istio到底给k8s带来了什么方面有点迷失了。这是否会增加</description>
     </item>

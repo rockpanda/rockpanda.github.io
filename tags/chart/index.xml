@@ -6,6 +6,8 @@
     <description>Recent content in Chart on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Wed, 25 Oct 2017 17:15:23 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/chart/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>使用Helm管理kubernetes原生应用</title>
       <link>https://rockpanda.github.io/posts/manage-kubernetes-native-app-with-helm/</link>
       <pubDate>Wed, 25 Oct 2017 17:15:23 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/manage-kubernetes-native-app-with-helm/</guid>
       <description>完本文后您应该可以自己创建chart，并创建自己的私有chart仓库。 Helm是一个kubernetes应用的包管理工具，用来管理chart</description>
     </item>

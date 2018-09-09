@@ -6,6 +6,8 @@
     <description>Recent content in Paas on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Thu, 23 Mar 2017 22:54:18 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/paas/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Pivotal Cloud foundry快速开始指南</title>
       <link>https://rockpanda.github.io/posts/cloud-foundry-tryout/</link>
       <pubDate>Thu, 23 Mar 2017 22:54:18 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/cloud-foundry-tryout/</guid>
       <description>前言 最近研究了下Pivotal的Cloud foundry，CF本身是一款开源软件，很多PAAS厂商都加入了CF，我们用的是的PCF Dev（P</description>
     </item>

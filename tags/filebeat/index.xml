@@ -6,6 +6,8 @@
     <description>Recent content in Filebeat on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Wed, 17 May 2017 17:24:52 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/filebeat/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>使用filebeat收集kubernetes中的应用日志</title>
       <link>https://rockpanda.github.io/posts/kubernetes-filebeat/</link>
       <pubDate>Wed, 17 May 2017 17:24:52 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/kubernetes-filebeat/</guid>
       <description>前言 本文已同步更新到Github仓库kubernetes-handbook中。 昨天写了篇文章使用Logstash收集Kubernetes的应</description>
     </item>

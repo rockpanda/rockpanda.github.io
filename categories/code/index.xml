@@ -6,6 +6,8 @@
     <description>Recent content in Code on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Fri, 24 Mar 2017 08:36:29 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/categories/code/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Go语言中的并发编程总结</title>
       <link>https://rockpanda.github.io/posts/golang-concurrency-summary/</link>
       <pubDate>Fri, 24 Mar 2017 08:36:29 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/golang-concurrency-summary/</guid>
       <description>Go语言并发编程总结 Golang :不要通过共享内存来通信，而应该通过通信来共享内存。这句风靡在Go社区的话,说的就是 goroutine中的 channe</description>
     </item>

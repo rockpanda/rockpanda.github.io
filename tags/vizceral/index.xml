@@ -6,6 +6,8 @@
     <description>Recent content in Vizceral on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Thu, 21 Jun 2018 12:21:36 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/vizceral/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Vistio—使用Netflix的Vizceral可视化Istio service mesh</title>
       <link>https://rockpanda.github.io/posts/vistio-visualize-your-istio-mesh-using-netflixs-vizceral/</link>
       <pubDate>Thu, 21 Jun 2018 12:21:36 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/vistio-visualize-your-istio-mesh-using-netflixs-vizceral/</guid>
       <description>Vistio GitHub地址：https://github.com/nmnellis/vistio Vizceral是Netflix发布的一个开源项目，</description>
     </item>

@@ -6,6 +6,8 @@
     <description>Recent content in Startups on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Tue, 19 Jun 2018 12:35:47 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/startups/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>MagicSandbox Alpha 版本发布</title>
       <link>https://rockpanda.github.io/posts/magicsandbox-alpha-version-annoucement/</link>
       <pubDate>Tue, 19 Jun 2018 12:35:47 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/magicsandbox-alpha-version-annoucement/</guid>
       <description>如果有一个可视化的，提供基础设施集群给你操作的学习模式和平台，你会为此买单吗？ 两个月前，我在Kubernetes的Slack channel中</description>
     </item>

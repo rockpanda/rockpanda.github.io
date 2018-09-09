@@ -6,6 +6,8 @@
     <description>Recent content in Keepalived on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Tue, 09 May 2017 12:59:19 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/keepalived/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>使用traefik和keepalived配置kubernetes的边缘节点</title>
       <link>https://rockpanda.github.io/posts/kubernetes-edge-node-configuration/</link>
       <pubDate>Tue, 09 May 2017 12:59:19 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/kubernetes-edge-node-configuration/</guid>
       <description>前言 为了配置kubernetes中的traefik ingress的高可用，对于kubernetes集群以外只暴露一个访问入口，需要使用kee</description>
     </item>

@@ -6,6 +6,8 @@
     <description>Recent content in Configmap on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Wed, 08 Nov 2017 18:58:06 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/configmap/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Kubernetes ConfigMap热更新测试</title>
       <link>https://rockpanda.github.io/posts/kubernetes-configmap-hot-update/</link>
       <pubDate>Wed, 08 Nov 2017 18:58:06 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/kubernetes-configmap-hot-update/</guid>
       <description>ConfigMap热更新测试 ConfigMap是用来存储配置文件的kubernetes资源对象，所有的配置内容都存储在etcd中，下文主要是</description>
     </item>

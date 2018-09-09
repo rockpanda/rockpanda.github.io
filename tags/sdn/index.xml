@@ -6,6 +6,8 @@
     <description>Recent content in Sdn on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpandan(曾朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpandan(曾朝俊))</webMaster>
     <lastBuildDate>Fri, 17 Mar 2017 17:52:37 +0800</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/tags/sdn/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +17,7 @@
       <title>Contiv Ultimate-Docker17.03CE下思科docker网络插件contiv趟坑终极版</title>
       <link>https://rockpanda.github.io/posts/contiv-ultimate/</link>
       <pubDate>Fri, 17 Mar 2017 17:52:37 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/contiv-ultimate/</guid>
       <description>前几天写的几篇关于Contiv的文章已经把引入坑了😂 今天这篇文章将带领大家用正确的姿势编译和打包一个contiv netplugin。 请一定要</description>
     </item>
@@ -24,7 +26,7 @@
       <title>Contiv入坑指南-v2plugin</title>
       <link>https://rockpanda.github.io/posts/contiv-v2plugin/</link>
       <pubDate>Fri, 10 Mar 2017 11:51:09 +0800</pubDate>
-      
+      <author>balladpanda@gamil.com (rockpandan(曾朝俊))</author>
       <guid>https://rockpanda.github.io/posts/contiv-v2plugin/</guid>
       <description>继续趟昨天挖的坑。 昨天的issue-776已经得到@gkvijay的回复，原来是因为没有安装contiv/v2plugin的缘故，所以cre</description>
     </item>
