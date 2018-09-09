@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title> Kubernetes traefik ingress安装试用 - 宋净超的博客|Developer Advocate on Cloud Native|jimmysong.io</title>
+  <meta name="description" content="宋净超的博客|Developer Advocate on Cloud Native|jimmysong.io" />
+  <meta property="og:title" content="Kubernetes traefik ingress安装试用" />
+  <meta name="twitter:title" content="Kubernetes traefik ingress安装试用" />
+  <meta name="description" content="前言 昨天翻了下Ingress解析，然后安装试用了下traefik，过程已同步到kubernetes-handbook上，Github地址 In">
+  <meta property="og:description" content="前言 昨天翻了下Ingress解析，然后安装试用了下traefik，过程已同步到kubernetes-handbook上，Github地址 In">
+  <meta name="twitter:description" content="前言 昨天翻了下Ingress解析，然后安装试用了下traefik，过程已同步到kubernetes-handbook上，Github地址 In">
+  <meta name="author" content="Jimmy Song(宋净超)"/>
+  <link href='https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ft1oje0atgj31kw1kzk1j.jpg" />
+  <meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ft1oje0atgj31kw1kzk1j.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jimmysongio" />
+  <meta name="twitter:creator" content="@jimmysongio" />
+  <meta property="og:url" content="https://rockpanda.github.io/posts/traefik-ingress-installation/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jimmy Song" />
+
+  <meta name="generator" content="Hugo 0.48" />
+  <link rel="canonical" href="https://rockpanda.github.io/posts/traefik-ingress-installation/" />
+  <link rel="alternate" href="https://rockpanda.github.io/index.xml" type="application/rss+xml" title="Jimmy Song">
+  <script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://rockpanda.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://rockpanda.github.io/css/search.css" />
+  
+  
+
+<meta name="baidu-site-verification" content="g8IYR9SNLF" />
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?11f7d254cfa4e0ca44b175c66d379ecc";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<link rel="stylesheet" href="https://rockpanda.github.io/css/prism.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://rockpanda.github.io/">Jimmy Song</a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Categories</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="https://rockpanda.github.io/categories/kubernetes">kubernetes</a>
+                
+                
+                  <a href="https://rockpanda.github.io/categories/cloud-native">Cloud Native</a>
+                
+                
+                  <a href="https://rockpanda.github.io/categories/microservices">Microservices</a>
+                
+                
+                  <a href="https://rockpanda.github.io/categories/devops">Devops</a>
+                
+                
+                  <a href="https://rockpanda.github.io/categories/github">Github</a>
+                
+                
+                  <a href="https://rockpanda.github.io/categories/serverless">Serverless</a>
+                
+                
+                  <a href="https://rockpanda.github.io/categories/service-mesh">Service Mesh</a>
+                
+                
+                  <a href="https://rockpanda.github.io/tags">Tags</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Gitbooks</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="https://rockpanda.github.io/kubernetes-handbook">Kubernetes handbook</a>
+                
+                
+                  <a href="https://rockpanda.github.io/docker-handbook">Docker handbook</a>
+                
+                
+                  <a href="https://rockpanda.github.io/hugo-handbook">Hugo Handbook</a>
+                
+                
+                  <a href="https://servicemesher.github.io/envoy">Envoy proxy中文文档</a>
+                
+                
+                  <a href="https://rockpanda.github.io/migrating-to-cloud-native-application-architectures">Migrating to Cloud Native</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Publications</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="https://rockpanda.github.io/posts/cloud-native-go">Cloud Native Go</a>
+                
+                
+                  <a href="https://rockpanda.github.io/posts/cloud-native-python">Cloud Native Python</a>
+                
+                
+                  <a href="https://rockpanda.github.io/posts/cloud-native-java">Cloud Native Java</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Projects</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="https://github.com/rootsongjc/kubernetes-vagrant-centos-cluster">k8s all-in-one</a>
+                
+                
+                  <a href="https://rockpanda.github.io/spark-on-k8s">Spark on kubernetes</a>
+                
+                
+                  <a href="https://github.com/alipay/sofa-mesh">sofa-mesh</a>
+                
+                
+                  <a href="https://github.com/alipay/sofa-mosn">sofa-mosn</a>
+                
+                
+                  <a href="https://github.com/rootsongjc/beautifulhugo">Beautifulhugo</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+              
+              
+            </li>
+          
+        
+
+        
+
+        
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Search</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Jimmy Song" href="https://rockpanda.github.io/">
+            <img class="avatar-img" src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/avatar-icon.png" alt="Jimmy Song" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search jimmysong.io</h4>
+        </div>
+        <div class="modal-body">
+            
+<div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" autofocus="autofocus"/>
+    <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+    </svg>
+</div>
+
+
+
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/autocomplete.min.js"></script>
+
+<script>
+var client = algoliasearch("X4YB3WOBNV", "d2134c5a8d250e6d3246594240c45201");
+var index = client.initIndex('rootsongjc-hugo');
+
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+    
+    displayKey: 'name',
+    
+    templates: {
+        
+        suggestion: function(suggestion) {
+            
+            return '<span>' + '<a href="/' + suggestion.uri+ '">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="https://res.cloudinary.com/jimmysong/image/upload/images/20160915046.jpg" data-img-desc-1="🐟@鱼缸 Sep 15,2016"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-12 col-md-12 col-md-offset-0">
+                
+                <div class="post-heading">
+                
+                  
+                     <h1>Kubernetes traefik ingress安装试用</h1>
+                     
+                    <span class="post-meta">
+  
+  Posted on April 20, 2017
+  
+  
+</span>
+
+
+                    
+                  
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-md-offset-0">
+            <div class="posts-heading">
+                <h1 align="center">Kubernetes traefik ingress安装试用</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            
+            
+            
+<div>
+    <section id="datecount">
+        <h4 id="date"> Thu Apr 20, 2017</h4>
+    </section>
+    <h5 id="wc">1800 Words|Read in about 4 Min</h5>
+    <h5 id="tags">Tags: 
+        
+        <a href="https://rockpanda.github.io/tags/kubernetes/">kubernetes</a> &nbsp;
+        
+        <a href="https://rockpanda.github.io/tags/traefik/">traefik</a> &nbsp;
+        
+        <a href="https://rockpanda.github.io/tags/ingress/">ingress</a> &nbsp;
+    </h5>
+</div>
+
+            
+            <article role="main" class="blog-post" itemprop="articleBody" id="content">
+                
+  
+  <aside class="toc">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#ingress简介">Ingress简介</a></li>
+<li><a href="#部署traefik">部署Traefik</a></li>
+<li><a href="#测试">测试</a></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+  
+
+
+                
+
+<h2 id="前言">前言</h2>
+
+<p>昨天翻了下<a href="https://jimmysong.io/posts/kubernetes-ingress-resource/">Ingress解析</a>，然后安装试用了下<a href="https://traefik.io">traefik</a>，过程已同步到<a href="https://www.gitbook.com/book/rootsongjc/kubernetes-handbook">kubernetes-handbook</a>上，<a href="https://github.com/rootsongjc/kubernetes-handbook">Github地址</a></p>
+
+<h2 id="ingress简介">Ingress简介</h2>
+
+<p>如果你还不了解，ingress是什么，可以先看下我翻译的Kubernetes官网上ingress的介绍<a href="https://jimmysong.io/posts/kubernetes-ingress-resource/">Kubernetes Ingress解析</a>。</p>
+
+<p><strong>理解Ingress</strong></p>
+
+<p>简单的说，ingress就是从kubernetes集群外访问集群的入口，将用户的URL请求转发到不同的service上。Ingress相当于nginx、apache等负载均衡方向代理服务器，其中还包括规则定义，即URL的路由信息，路由信息得的刷新由<a href="https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-controllers">Ingress controller</a>来提供。</p>
+
+<p><strong>理解Ingress Controller</strong></p>
+
+<p>Ingress Controller 实质上可以理解为是个监视器，Ingress Controller 通过不断地跟 kubernetes API 打交道，实时的感知后端 service、pod 等变化，比如新增和减少 pod，service 增加与减少等；当得到这些变化信息后，Ingress Controller 再结合下文的 Ingress 生成配置，然后更新反向代理负载均衡器，并刷新其配置，达到服务发现的作用。</p>
+
+<h2 id="部署traefik">部署Traefik</h2>
+
+<p><strong>介绍traefik</strong></p>
+
+<p><a href="https://traefik.io/">Traefik</a>是一款开源的反向代理与负载均衡工具。它最大的优点是能够与常见的微服务系统直接整合，可以实现自动化动态配置。目前支持Docker, Swarm, Mesos/Marathon, Mesos, Kubernetes, Consul, Etcd, Zookeeper, BoltDB, Rest API等等后端模型。</p>
+
+<p>以下配置文件可以在<a href="https://github.com/rootsongjc/kubernetes-handbook">kubernetes-handbook</a>GitHub仓库中的<a href="manifests/traefik-ingress/">manifests/traefik-ingress/</a>目录下找到。</p>
+
+<p><strong>创建ingress-rbac.yaml</strong></p>
+
+<p>将用于service account验证。</p>
+
+<pre><code class="language-Yaml">apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ingress
+  namespace: kube-system
+
+---
+
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: ingress
+subjects:
+  - kind: ServiceAccount
+    name: ingress
+    namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+
+<p><strong>创建名为<code>traefik-ingress</code>的ingress</strong>，文件名traefik.yaml</p>
+
+<pre><code class="language-yaml">apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-ingress
+spec:
+  rules:
+  - host: traefik.nginx.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: my-nginx
+          servicePort: 80
+  - host: traefik.frontend.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frontend
+          servicePort: 80
+</code></pre>
+
+<p>这其中的<code>backend</code>中要配置default namespace中启动的service名字。<code>path</code>就是URL地址后的路径，如traefik.frontend.io/path，service将会接受path这个路径，host最好使用service-name.filed1.filed2.domain-name这种类似主机名称的命名方式，方便区分服务。</p>
+
+<p>根据你自己环境中部署的service的名字和端口自行修改，有新service增加时，修改该文件后可以使用<code>kubectl replace -f traefik.yaml</code>来更新。</p>
+
+<p>我们现在集群中已经有两个service了，一个是nginx，另一个是官方的<code>guestbook</code>例子。</p>
+
+<p><strong>创建Depeloyment</strong></p>
+
+<pre><code class="language-Yaml">apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: traefik-ingress-lb
+  namespace: kube-system
+  labels:
+    k8s-app: traefik-ingress-lb
+spec:
+  template:
+    metadata:
+      labels:
+        k8s-app: traefik-ingress-lb
+        name: traefik-ingress-lb
+    spec:
+      terminationGracePeriodSeconds: 60
+      hostNetwork: true
+      restartPolicy: Always
+      serviceAccountName: ingress
+      containers:
+      - image: traefik
+        name: traefik-ingress-lb
+        resources:
+          limits:
+            cpu: 200m
+            memory: 30Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
+        ports:
+        - name: http
+          containerPort: 80
+          hostPort: 80
+        - name: admin
+          containerPort: 8580
+          hostPort: 8580
+        args:
+        - --web
+        - --web.address=:8580
+        - --kubernetes
+</code></pre>
+
+<p>注意我们这里用的是Deploy类型，没有限定该pod运行在哪个主机上。Traefik的端口是8580。</p>
+
+<p><strong>Traefik UI</strong></p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-web-ui
+  namespace: kube-system
+spec:
+  selector:
+    k8s-app: traefik-ingress-lb
+  ports:
+  - name: web
+    port: 80
+    targetPort: 8580
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-web-ui
+  namespace: kube-system
+spec:
+  rules:
+  - host: traefik-ui.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: traefik-web-ui
+          servicePort: web
+</code></pre>
+
+<p>配置完成后就可以启动treafik ingress了。</p>
+
+<pre><code class="language-bash">kubectl create -f .
+</code></pre>
+
+<p>我查看到traefik的pod在<code>172.20.0.115</code>这台节点上启动了。</p>
+
+<p>访问该地址<code>http://172.20.0.115:8580/</code>将可以看到dashboard。</p>
+
+<p><img src="https://res.cloudinary.com/jimmysong/image/upload/images/traefik-dashboard.jpg" alt="kubernetes-dashboard" /></p>
+
+<p>左侧黄色部分部分列出的是所有的rule，右侧绿色部分是所有的backend。</p>
+
+<h2 id="测试">测试</h2>
+
+<p>在集群的任意一个节点上执行。假如现在我要访问nginx的&rdquo;/&ldquo;路径。</p>
+
+<pre><code class="language-bash">$ curl -H Host:traefik.nginx.io http://172.20.0.115/
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>如果你需要在kubernetes集群以外访问就需要设置DNS，或者修改本机的hosts文件。</p>
+
+<p>在其中加入：</p>
+
+<pre><code class="language-ini">172.20.0.115 traefik.nginx.io
+172.20.0.115 traefik.frontend.io
+</code></pre>
+
+<p>所有访问这些地址的流量都会发送给172.20.0.115这台主机，就是我们启动traefik的主机。</p>
+
+<p>Traefik会解析http请求header里的Host参数将流量转发给Ingress配置里的相应service。</p>
+
+<p>修改hosts后就就可以在kubernetes集群外访问以上两个service，如下图：</p>
+
+<p><img src="https://res.cloudinary.com/jimmysong/image/upload/images/traefik-nginx.jpg" alt="traefik-nginx" /></p>
+
+<p><img src="https://res.cloudinary.com/jimmysong/image/upload/images/traefik-guestbook.jpg" alt="traefik-guestbook" /></p>
+
+<h2 id="参考">参考</h2>
+
+<p><a href="http://www.colabug.com/thread-1703745-1-1.html">Traefik-kubernetes 初试</a></p>
+
+<p><a href="http://www.tuicool.com/articles/ZnuEfay">Traefik简介</a></p>
+
+<p><a href="https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook">Guestbook example</a></p>
+
+            </article>
+
+            <ul class="pager blog-pager">
+                
+                <li class="previous">
+                    <a href="https://rockpanda.github.io/posts/kubernetes-ingress-resource/" data-toggle="tooltip" data-placement="top" title="Kubernetes ingress解析">&larr; Previous Post</a>
+                </li>
+                 
+                <li class="next">
+                    <a href="https://rockpanda.github.io/posts/kubernetes-rbac-support/" data-toggle="tooltip" data-placement="top" title="Kubernetes中的RBAC支持">Next Post &rarr;</a>
+                </li>
+                
+            </ul>
+            
+            <div>
+                 
+                <h2>See Also</h2>
+                <ul>
+                    
+                    <li><a href="/posts/kubernetes-ingress-resource/">Kubernetes ingress解析</a></li>
+                    
+                    <li><a href="/posts/kubernetes-handbook-startup/">Kubernetes Handbook发起</a></li>
+                    
+                    <li><a href="/posts/kubernetes-installation-document/">Kubernetes1.6集群部署完全指南——二进制文件部署开启TLS基于CentOS7发布</a></li>
+                    
+                    <li><a href="/posts/kubernetes-efk-installation-with-tls/">在开启TLS的Kubernetes1.6集群上安装EFK</a></li>
+                    
+                    <li><a href="/posts/kubernetes-heapster-installation-with-tls/">在开启TLS的Kubernetes1.6集群上安装heapster</a></li>
+                    
+                </ul>
+                
+            </div>
+            
+            
+            
+            
+<div>
+    <section id="datecount">
+        <h4 id="date"> Thu Apr 20, 2017</h4>
+    </section>
+    <h5 id="wc">1800 Words|Read in about 4 Min</h5>
+    <h5 id="tags">Tags: 
+        
+        <a href="https://rockpanda.github.io/tags/kubernetes/">kubernetes</a> &nbsp;
+        
+        <a href="https://rockpanda.github.io/tags/traefik/">traefik</a> &nbsp;
+        
+        <a href="https://rockpanda.github.io/tags/ingress/">ingress</a> &nbsp;
+    </h5>
+</div>
+
+            
+            </div>
+            
+            
+        </div>
+    </div>
+    </section>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+        <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1ftndnxw6b2j30a004gdgb.jpg">
+          
+              <li>
+                <a href="https://www.facebook.com/jimmysongio" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/rootsongjc" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/jimmysongio" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/jimmysongio" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="http://weibo.com/jimmysongio" title="weibo">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="https://rockpanda.github.io/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+        &copy;2017-2018
+          
+            
+              <a href="https://jimmysong.io">Jimmy Song(宋净超)</a>
+            
+          
+          
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://rockpanda.github.io/">Jimmy Song</a>
+          
+        </p>
+        <p class="credits theme-by text-muted">
+        <a href="http://www.servicemesher.com">servicemesher.com</a>&nbsp;&bull;&nbsp;<a href="https://dataikudss.com">dataikudss.com</a>&nbsp;&bull;&nbsp;<a href="https://cloudnativego.com">cloudnativego.com</a>
+        </p>
+
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.48</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/rootsongjc/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/bootstrap.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/photoswipe-ui-default.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/photoswipe.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/auto-render.min.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/main.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/prism.js"></script>
+<script src="https://res.cloudinary.com/jimmysong/raw/upload/rootsongjc-hugo/katex.min.js"></script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+  </body>
+</html>
+
