@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rockpanda.github.io/posts/first-use-helm-on-kubernetes/</loc>
+    <lastmod>2018-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rockpanda.github.io/posts/fabric8-introduction/</loc>
+    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rockpanda.github.io/posts/docker-dev-env/</loc>
     <lastmod>2017-03-06T17:03:19+08:00</lastmod>
   </url>
@@ -13,8 +23,14 @@
   </url>
   
   <url>
-    <loc>https://rockpanda.github.io/categories/docker/</loc>
-    <lastmod>2017-03-06T17:03:19+08:00</lastmod>
+    <loc>https://rockpanda.github.io/tags/devops/</loc>
+    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockpanda.github.io/categories/devops/</loc>
+    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -25,20 +41,50 @@
   </url>
   
   <url>
-    <loc>https://rockpanda.github.io/posts/</loc>
+    <loc>https://rockpanda.github.io/categories/docker/</loc>
     <lastmod>2017-03-06T17:03:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockpanda.github.io/tags/fabric8/</loc>
+    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockpanda.github.io/tags/helm/</loc>
+    <lastmod>2018-01-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockpanda.github.io/tags/kubernetes/</loc>
+    <lastmod>2018-01-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockpanda.github.io/tags/platform/</loc>
+    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rockpanda.github.io/posts/</loc>
+    <lastmod>2018-01-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rockpanda.github.io/</loc>
-    <lastmod>2017-03-06T17:03:19+08:00</lastmod>
+    <lastmod>2018-01-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://rockpanda.github.io/tags/</loc>
-    <lastmod>2017-03-06T17:03:19+08:00</lastmod>
+    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
