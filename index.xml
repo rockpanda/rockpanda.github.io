@@ -8,10 +8,21 @@
     <language>zh</language>
     <managingEditor>balladpanda@gamil.com (rockpanda(朝俊))</managingEditor>
     <webMaster>balladpanda@gamil.com (rockpanda(朝俊))</webMaster>
-    <lastBuildDate>Mon, 10 Apr 2017 21:39:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://rockpanda.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubernetes Helm 初体验</title>
+      <link>https://rockpanda.github.io/posts/first-use-helm-on-kubernetes/</link>
+      <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
+      <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
+      <guid>https://rockpanda.github.io/posts/first-use-helm-on-kubernetes/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Helm&lt;/code&gt;这个东西其实早有耳闻，但是一直没有用在生产环境，而且现在对这货的评价也是褒贬不一。正好最近需要再次部署一套测试环境，对于单体服务，部署一套测试环境我相信还是非常快的，但是对于微服务架构的应用，要部署一套新的环境，就有点折磨人了，微服务越多、你就会越绝望的。虽然我们线上和测试环境已经都迁移到了&lt;code&gt;kubernetes&lt;/code&gt;环境，但是每个微服务也得维护一套&lt;code&gt;yaml&lt;/code&gt;文件，而且每个环境下的配置文件也不太一样，部署一套新的环境成本是真的很高。如果我们能使用类似于&lt;code&gt;yum&lt;/code&gt;的工具来安装我们的应用的话是不是就很爽歪歪了啊？&lt;code&gt;Helm&lt;/code&gt;就相当于&lt;code&gt;kubernetes&lt;/code&gt;环境下的&lt;code&gt;yum&lt;/code&gt;包管理工具。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>开源微服务管理平台fabric8简介</title>
@@ -20,15 +31,6 @@
       <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
       <guid>https://rockpanda.github.io/posts/fabric8-introduction/</guid>
       <description>前言 无意中发现Fabric8这个对于Java友好的开源微服务管理平台。 其实这在这里发现的Achieving CI/CD with Kubernetes（by Ramit Surana,on</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>https://rockpanda.github.io/about/</link>
-      <pubDate>Sat, 18 Mar 2017 20:53:54 +0800</pubDate>
-      <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
-      <guid>https://rockpanda.github.io/about/</guid>
-      <description>Info Jimmy Song（宋净超） Beijing, China 🇨🇳 CNCF Ambassador Career iFlytek （科大讯飞) TalkingData Ant Financial（蚂蚁金服）current➡️招贤纳士 Bio Jimmy Song is a Developer Advocate on Cloud Native at Ant Financial. He has</description>
     </item>
     
     <item>
