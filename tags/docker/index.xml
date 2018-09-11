@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Rcokpanda</title>
-    <link>https://rockpanda.github.io/tags/docker/</link>
+    <link>https://blog.debris.cn/tags/docker/</link>
     <description>Recent content in Docker on Rcokpanda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -10,15 +10,15 @@
     <webMaster>balladpanda@gamil.com (rockpanda(朝俊))</webMaster>
     <lastBuildDate>Mon, 06 Mar 2017 17:03:19 +0800</lastBuildDate>
     
-	<atom:link href="https://rockpanda.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.debris.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker源码编译和开发环境搭建</title>
-      <link>https://rockpanda.github.io/posts/docker-dev-env/</link>
+      <link>https://blog.debris.cn/posts/docker-dev-env/</link>
       <pubDate>Mon, 06 Mar 2017 17:03:19 +0800</pubDate>
       <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
-      <guid>https://rockpanda.github.io/posts/docker-dev-env/</guid>
+      <guid>https://blog.debris.cn/posts/docker-dev-env/</guid>
       <description>看了下网上其他人写的docker开发环境搭建，要么是在ubuntu下搭建，要么就是使用官方说明的build docker-dev镜像的方式一步</description>
     </item>
     
