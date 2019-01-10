@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on Rcokpanda</title>
+    <link>http://blog.debris.cn/categories/devops/</link>
+    <description>Recent content in Devops on Rcokpanda</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>balladpanda@gamil.com (rockpanda(朝俊))</managingEditor>
+    <webMaster>balladpanda@gamil.com (rockpanda(朝俊))</webMaster>
+    <lastBuildDate>Thu, 10 Jan 2019 17:40:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.debris.cn/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Hugo和GitHub Pages等创建自己的博客</title>
+      <link>http://blog.debris.cn/posts/hugo-installblog-github/</link>
+      <pubDate>Thu, 10 Jan 2019 17:40:00 +0800</pubDate>
+      <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
+      <guid>http://blog.debris.cn/posts/hugo-installblog-github/</guid>
+      <description>准备工作 GitHub](http://www.github.com/) 这是必需的，因为你需要使用Github Pages来托管你的网站。而且你还需要安装git工具。创建一个以自己用户名命名的userna</description>
+    </item>
+    
+  </channel>
+</rss>
