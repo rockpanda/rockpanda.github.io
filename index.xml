@@ -14,21 +14,21 @@
     
     
     <item>
+      <title>使用Hugo和GitHub Pages等创建自己的博客</title>
+      <link>http://blog.debris.cn/posts/hugo-installblog-github/</link>
+      <pubDate>Mon, 10 Apr 2017 21:39:00 +0800</pubDate>
+      <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
+      <guid>http://blog.debris.cn/posts/hugo-installblog-github/</guid>
+      <description>准备工作 GitHub 这是必需的，因为你需要使用Github Pages来托管你的网站。而且你还需要安装git工具。创建一个以自己用户名命名的userna</description>
+    </item>
+    
+    <item>
       <title>开源微服务管理平台fabric8简介</title>
       <link>http://blog.debris.cn/posts/fabric8-introduction/</link>
       <pubDate>Mon, 10 Apr 2017 21:39:00 +0800</pubDate>
       <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
       <guid>http://blog.debris.cn/posts/fabric8-introduction/</guid>
       <description>前言 无意中发现Fabric8这个对于Java友好的开源微服务管理平台。 其实这在这里发现的Achieving CI/CD with Kubernetes（by Ramit Surana,on</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://blog.debris.cn/posts/hugo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
-      <guid>http://blog.debris.cn/posts/hugo/</guid>
-      <description>使用Hugo和GitHub Pages等创建自己的博客 draft: false date: &amp;ldquo;2017-04-10T21:39:00+08:00&amp;rdquo; title: &amp;ldquo;开源微服务管理平台fabric8简介&amp;rdquo; categories: &amp;ldquo;devops&amp;rdquo; tags: [&amp;ldquo;fabric8&amp;rdquo;,&amp;ldquo;platform&amp;rdquo;,&amp;ldquo;devops&amp;rdquo;] 准备工</description>
     </item>
     
   </channel>

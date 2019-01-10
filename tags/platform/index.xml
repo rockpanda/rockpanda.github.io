@@ -14,6 +14,15 @@
     
     
     <item>
+      <title>使用Hugo和GitHub Pages等创建自己的博客</title>
+      <link>http://blog.debris.cn/posts/hugo-installblog-github/</link>
+      <pubDate>Mon, 10 Apr 2017 21:39:00 +0800</pubDate>
+      <author>balladpanda@gamil.com (rockpanda(朝俊))</author>
+      <guid>http://blog.debris.cn/posts/hugo-installblog-github/</guid>
+      <description>准备工作 GitHub 这是必需的，因为你需要使用Github Pages来托管你的网站。而且你还需要安装git工具。创建一个以自己用户名命名的userna</description>
+    </item>
+    
+    <item>
       <title>开源微服务管理平台fabric8简介</title>
       <link>http://blog.debris.cn/posts/fabric8-introduction/</link>
       <pubDate>Mon, 10 Apr 2017 21:39:00 +0800</pubDate>
