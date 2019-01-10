@@ -8,18 +8,22 @@
   </url>
   
   <url>
+    <loc>http://blog.debris.cn/posts/hugo/</loc>
+  </url>
+  
+  <url>
     <loc>http://blog.debris.cn/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/tags/devops/</loc>
+    <loc>http://blog.debris.cn/categories/devops/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/categories/devops/</loc>
+    <loc>http://blog.debris.cn/tags/devops/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
