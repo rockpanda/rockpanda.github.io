@@ -338,12 +338,11 @@ autocomplete('#aa-search-input',
 <ul>
 <li><a href="#二进制安装-推荐-简单-快速">二进制安装（推荐：简单、快速）</a></li>
 <li><a href="#源码安装">源码安装</a></li>
+</ul></li>
 <li><a href="#生成站点">生成站点</a></li>
-<li><a href="#创建文章">创建文章</a></li>
 <li><a href="#安装皮肤">安装皮肤</a></li>
 <li><a href="#创建-themes-目录">创建 themes 目录</a></li>
 <li><a href="#部署">部署</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -365,7 +364,7 @@ autocomplete('#aa-search-input',
 <li><a href="https://huaban.com/">花瓣网</a> 知道花瓣也是从锤子科技发布会那了解到的，同样也有插件可以转存图片到花瓣帐号上去。</li>
 <li><a href="https://cloudinary.com">cloudinary</a> 用于托管图片和静态文件,他们家免费的规格足够目前的使用了，我把我自己的图片和样式文件都上存在在这里。</li>
 <li><a href="https://www.qikqiak.com/post/hugo-integrated-algolia-search/">Hugo 集成 Algolia</a> 提供检索功能</li>
-<li><a href="https://segmentfault.com/a/1190000014012115">Hexo博客利用Netlify升级为HTTPS</a>] 利用<a href="https://www.netlify.com/可以不用在cloudflare更改DNS，让你的域名拥有https,使用的是Let's">https://www.netlify.com/可以不用在cloudflare更改DNS，让你的域名拥有https,使用的是Let's</a> Encrypt的证书且自动需求，虽然他们也有空间托管，可惜我没用，只用了https，原理就是又多个域名转发，是不是很折腾呢</li>
+<li><a href="https://segmentfault.com/a/1190000014012115">Hexo博客利用Netlify升级为HTTPS</a>] 利用netlify可以不用在cloudflare更改DNS，让你的域名拥有https,使用的是Let&rsquo;s Encrypt的证书且自动需求，虽然他们也有空间托管，可惜我没用，只用了https，原理就是又多个域名转发，是不是很折腾呢</li>
 </ul>
 
 <h2 id="安装hugo">安装Hugo</h2>
@@ -392,8 +391,8 @@ Mac下直接使用 Homebrew 安装：</p>
 
 <p>设置好 GOPATH 环境变量，获取源码并编译：</p>
 
-<pre><code class="language-bash">$export GOPATH=$HOME/go
-$go get -v github.com/spf13/hugo
+<pre><code class="language-bash">$ export GOPATH=$HOME/go
+$ go get -v github.com/spf13/hugo
 </code></pre>
 
 <p>源码会下载到 $GOPATH/src 目录，二进制在 $GOPATH/bin/</p>
@@ -403,27 +402,27 @@ $go get -v github.com/spf13/hugo
 <pre><code>$ go get -u -v github.com/spf13/hugo
 </code></pre>
 
-<h3 id="生成站点">生成站点</h3>
+<h2 id="生成站点">生成站点</h2>
 
 <p>使用Hugo快速生成站点，比如希望生成到 /path/to/site 路径：</p>
 
-<pre><code>$ hugo new site /path/to/site
+<pre><code class="language-bash">$ hugo new site /path/to/site
 </code></pre>
 
 <p>这样就在 /path/to/site 目录里生成了初始站点，进去目录：</p>
 
-<pre><code>$ cd /path/to/site
+<pre><code class="language-bash">$ cd /path/to/site
 </code></pre>
 
 <p>站点目录结构：</p>
 
-<blockquote>
-<p>▸ archetypes/
-  ▸ content/
-  ▸ layouts/
-  ▸ static/
-​    config.toml</p>
-</blockquote>
+<ul>
+<li>archetypes/</li>
+<li>content/</li>
+<li>layouts/</li>
+<li>static/</li>
+<li>config.toml</li>
+</ul>
 
 <p>config.toml是网站的配置文件，包括baseurl, title, copyright等等网站参数。</p>
 
@@ -436,18 +435,20 @@ $go get -v github.com/spf13/hugo
 <li>​ static：包括了css, js, fonts, media等，决定网站的外观</li>
 </ul>
 
-<h3 id="创建文章">创建文章</h3>
+<p>创建文章</p>
 
 <p>创建一个 about 页面：</p>
 
-<pre><code>$ hugo new about.md
+<pre><code class="language-bash">$ hugo new about.md
 </code></pre>
 
 <p>about.md 自动生成到了 content/about.md ，打开 about.md 看下：</p>
 
-<pre><code>date = &quot;2015-10-25T08:36:54-07:00&quot;
+<pre><code>+++
+date = &quot;2015-10-25T08:36:54-07:00&quot;
 draft = true
-title = &quot;about&quot;
+title = &quot;about&quot;3
++++
 </code></pre>
 
 <p>正文内容
@@ -455,16 +456,15 @@ title = &quot;about&quot;
 
 <p>创建第一篇文章，放到 post 目录，方便之后生成聚合页面。</p>
 
-<pre><code>$ hugo new post/first.md
+<pre><code class="language-bash">$ hugo new post/first.md
 </code></pre>
 
 <p>打开编辑 post/first.md ：</p>
 
 <pre><code>---
 date: &quot;2015-10-25T08:36:54-07:00&quot;
-
 title: &quot;first&quot;
-
+---
 ### Hello Hugo
 
 1. aaa
@@ -472,38 +472,38 @@ title: &quot;first&quot;
 3. ccc
 </code></pre>
 
-<h3 id="安装皮肤">安装皮肤</h3>
+<h2 id="安装皮肤">安装皮肤</h2>
 
 <p>到 皮肤列表 挑选一个心仪的皮肤，比如你觉得 Hyde 皮肤不错，找到相关的 GitHub 地址，创建目录 themes，在 themes 目录里把皮肤 git clone 下来：</p>
 
-<h3 id="创建-themes-目录">创建 themes 目录</h3>
+<h2 id="创建-themes-目录">创建 themes 目录</h2>
 
-<pre><code>$ cd themes
+<pre><code class="language-bash">$ cd themes
 $ git clone https://github.com/spf13/hyde.git
 </code></pre>
 
 <p>运行Hugo
 在你的站点根目录执行 Hugo 命令进行调试：</p>
 
-<pre><code>$ hugo server 
+<pre><code class="language-bash">$ hugo server 
 </code></pre>
 
 <p>浏览器里打开： <a href="http://localhost:1313">http://localhost:1313</a></p>
 
-<h3 id="部署">部署</h3>
+<h2 id="部署">部署</h2>
 
 <p>假设你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：rockpanda.github.io （rockpanda.替换为你的github用户名）。</p>
 
 <p>在站点根目录执行 Hugo 命令生成最终页面：</p>
 
-<pre><code>$ hugo --theme=beautifulhugo --baseUrl=&quot;http://blog.debris.cn/&quot;
+<pre><code class="language-bash">$ hugo --theme=beautifulhugo --baseUrl=&quot;http://blog.debris.cn/&quot;
 </code></pre>
 
 <p>（注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。）</p>
 
 <p>如果一切顺利，所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的Repository的 master 分支。</p>
 
-<pre><code>$ cd public
+<pre><code class="language-bash">$ cd public
 $ git init
 $ git remote add origin https://github.com/rockpanda/rockpanda.github.io
 $ git add -A
