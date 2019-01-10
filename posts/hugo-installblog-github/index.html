@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title> 使用Hugo和GitHub Pages等创建自己的博客 - 朝俊的博客|Cloud Native Lover|blog.debris.cn</title>
+  <meta name="description" content="朝俊的博客|Cloud Native Lover|blog.debris.cn" />
+  <meta property="og:title" content="使用Hugo和GitHub Pages等创建自己的博客" />
+  <meta name="twitter:title" content="使用Hugo和GitHub Pages等创建自己的博客" />
+  <meta name="description" content="准备工作 GitHub 这是必需的，因为你需要使用Github Pages来托管你的网站。而且你还需要安装git工具。创建一个以自己用户名命名的userna">
+  <meta property="og:description" content="准备工作 GitHub 这是必需的，因为你需要使用Github Pages来托管你的网站。而且你还需要安装git工具。创建一个以自己用户名命名的userna">
+  <meta name="twitter:description" content="准备工作 GitHub 这是必需的，因为你需要使用Github Pages来托管你的网站。而且你还需要安装git工具。创建一个以自己用户名命名的userna">
+  <meta name="author" content="rockpanda(朝俊)"/>
+  <link href='https://res.cloudinary.com/debris/image/upload/rockpanda/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://blog.debris.cn/posts/hugo-installblog-github/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rcokpanda" />
+
+  <meta name="generator" content="Hugo 0.48" />
+  <link rel="canonical" href="http://blog.debris.cn/posts/hugo-installblog-github/" />
+  <link rel="alternate" href="http://blog.debris.cn/index.xml" type="application/rss+xml" title="Rcokpanda">
+  <script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/jquery-1.11.2.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  
+  <link rel="stylesheet" href="https://res.cloudinary.com/debris/raw/upload/rockpanda/css/search.css" />
+  <link rel="stylesheet" href="https://res.cloudinary.com/debris/raw/upload/rockpanda/css/main.css" />
+  <link rel="stylesheet" href="https://res.cloudinary.com/debris/raw/upload/rockpanda/css/catalog.css" />
+
+  
+  
+
+<meta name="baidu-site-verification" content="g8IYR9SNLF" />
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641167f44df8a535b1b1cb073a861fa1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<link rel="stylesheet" href="https://res.cloudinary.com/debris/raw/upload/rockpanda/css/prism.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://blog.debris.cn">Rcokpanda</a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Categories</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="http://blog.debris.cn/categories/python">python</a>
+                
+                
+                  <a href="http://blog.debris.cn/categories/devops">devops</a>
+                
+                
+                  <a href="http://blog.debris.cn/categories/docker">docker</a>
+                
+                
+                  <a href="http://blog.debris.cn/categories/kubernetes">kubernetes</a>
+                
+                
+                  <a href="http://blog.debris.cn/categories/cloud-native">cloud native</a>
+                
+                
+                  <a href="http://blog.debris.cn/tags">Tags</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Gitbooks</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="http://blog.debris.cn">Jumpserver</a>
+                
+                
+                  <a href="http://blog.debris.cn">Harbor</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Projects</a>
+              <div class="navlinks-children">
+                
+                
+                  <a href="https://github.com/pandalives">Pandalives</a>
+                
+                
+                  <a href="https://github.com/focusops">FocusOps</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about">About</a>
+              
+              
+            </li>
+          
+        
+
+        
+
+        
+        
+          <li>
+            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
+              <span class="hidden-sm hidden-md hidden-lg">Search</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
+            </a>
+          </li>
+          
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Rcokpanda" href="http://blog.debris.cn">
+            <img class="avatar-img" src="https://res.cloudinary.com/debris/image/upload/rockpanda/img/rockpanda.jpg" alt="Rcokpanda" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+  <div id="modalSearch" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search blog.rockpanda.cn</h4>
+        </div>
+        <div class="modal-body">
+            
+<div class="aa-input-container" id="aa-input-container">
+    <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for titles or URIs..." name="search" autocomplete="off" autofocus="autofocus"/>
+    <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
+        <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
+    </svg>
+</div>
+
+
+
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/algoliasearch.min.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/autocomplete.min.js"></script>
+
+<script>
+var client = algoliasearch("X4YB3WOBNV", "f33e6c69185305572fda08f836223aa5");
+var index = client.initIndex('rootsongjc-hugo');
+
+autocomplete('#aa-search-input',
+{ hint: false}, {
+    source: autocomplete.sources.hits(index, {hitsPerPage: 5}),
+    
+    displayKey: 'name',
+    
+    templates: {
+        
+        suggestion: function(suggestion) {
+            
+            return '<span>' + '<a href="/' + suggestion.uri+ '">' +
+            suggestion._highlightResult.title.value + '</a></span>';
+        }
+    }
+});
+</script>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-md-offset-0">
+            <div class="posts-heading">
+                <h1 align="center">使用Hugo和GitHub Pages等创建自己的博客</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            
+            
+            
+<div>
+    <section id="datecount">
+        <h4 id="date"> Thu Jan 10, 2019</h4>
+    </section>
+    <h5 id="wc">1800 Words|Read in about 4 Min</h5>
+    <h5 id="tags">Tags: 
+        
+        <a href="http://blog.debris.cntags/hugo/">hugo</a> &nbsp;
+        
+        <a href="http://blog.debris.cntags/blog/">blog</a> &nbsp;
+        
+        <a href="http://blog.debris.cntags/github/">github</a> &nbsp;
+    </h5>
+</div>
+
+            
+            <article role="main" class="blog-post" itemprop="articleBody" id="content">
+                
+  
+  <aside class="toc">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#准备工作">准备工作</a></li>
+<li><a href="#安装hugo">安装Hugo</a>
+<ul>
+<li><a href="#二进制安装-推荐-简单-快速">二进制安装（推荐：简单、快速）</a></li>
+<li><a href="#源码安装">源码安装</a>
+<ul>
+<li><a href="#hello-hugo">Hello Hugo</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#创建-themes-目录">创建 themes 目录</a></li>
+</ul>
+</nav>
+  </aside>
+  
+
+
+                
+
+<h1 id="准备工作">准备工作</h1>
+
+<ul>
+<li><a href="http://www.github.com/">GitHub</a> <strong>这是必需的</strong>，因为你需要使用<a href="https://pages.github.com/">Github Pages</a>来托管你的网站。而且你还需要安装git工具。创建一个以自己用户名命名的username.github.io的project。</li>
+<li><a href="http://www.qiniu.com/">七牛云存储</a> <strong>非必需</strong>，为了存储文件方便，建议申请一个，免费10G的存储空间，存储照片和一些小文件是足够的，可以用来做外链，方便存储和管理，这样你就不用把图片也托管到Github上了。流量也是不限的。我没有收七牛的一点好处，以为是我自己用的，所以推荐给大家，七牛还有命令行客户端，方便你上传和同步文件。如上的题图都是存储在七牛云中的。</li>
+<li><a href="https://jimmysong.io/posts/building-github-pages-with-hugo/tongji.baidu.com">百度统计</a> <strong>非必需</strong>，基本的网站数据分析，免费的，质量还行。还有微信公众号可以查看。顺便提一下，这个统计账号跟你的百度账号不是同一个东西，两者是两套体系，当然你可以和自己的百度账号关联。只需要在Web的Header中植入一段JS代码即可。</li>
+<li><a href="http://gohugo.io/">Hugo</a> <strong>必需的</strong>，静态网站生成工具，用来编译静态网站的。跟Hexo比起来我更喜欢这个工具。</li>
+<li><a href="https://typora.io/">Typro</a> <strong>非必需</strong>，但是强烈推荐，我最喜欢的免费的Markdown编辑器，hugo可以编译markdown格式为HTML，所以用它来写博客是最合适不过了。</li>
+<li><a href="https://github.com/Semibold/Weibo-Picture-Store">新浪微博图床</a> 用于托管图片，然后这个插件可以方便的把你看到的图片保存到你的新浪帐号里。</li>
+<li><a href="https://huaban.com/">花瓣网</a> 知道花瓣也是从锤子科技发布会那了解到的，同样也有插件可以转存图片到花瓣帐号上去。</li>
+<li><a href="https://cloudinary.com">cloudinary</a> 用于托管图片和静态文件,他们家免费的规格足够目前的使用了，我把我自己的图片和样式文件都上存在在这里。</li>
+<li><a href="https://www.qikqiak.com/post/hugo-integrated-algolia-search/">Hugo 集成 Algolia</a> 提供检索功能</li>
+</ul>
+
+<p><a href="https://segmentfault.com/a/1190000014012115">Hexo博客利用Netlify升级为HTTPS</a>] 利用<a href="https://www.netlify.com/可以不用在cloudflare更改DNS，让你的域名拥有https,使用的是Let's">https://www.netlify.com/可以不用在cloudflare更改DNS，让你的域名拥有https,使用的是Let's</a> Encrypt的证书且自动需求，虽然他们也有空间托管，可惜我没用，只用了https，原理就是又多个域名转发，是不是很折腾呢</p>
+
+<h1 id="安装hugo">安装Hugo</h1>
+
+<h2 id="二进制安装-推荐-简单-快速">二进制安装（推荐：简单、快速）</h2>
+
+<p>到 Hugo Releases 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）
+Mac下直接使用 Homebrew 安装：</p>
+
+<p><code>brew install hugo</code></p>
+
+<h2 id="源码安装">源码安装</h2>
+
+<p>源码编译安装，首先安装好依赖的工具：</p>
+
+<ul>
+<li><p>Git</p></li>
+
+<li><p>Mercurial</p></li>
+
+<li><p>Go 1.3+ (Go 1.4+ on Windows)</p></li>
+</ul>
+
+<p>设置好 GOPATH 环境变量，获取源码并编译：</p>
+
+<pre><code class="language-bash">$export GOPATH=$HOME/go
+$go get -v github.com/spf13/hugo
+</code></pre>
+
+<p>源码会下载到 $GOPATH/src 目录，二进制在 $GOPATH/bin/</p>
+
+<p>如果需要更新所有Hugo的依赖库，增加 -u 参数：</p>
+
+<pre><code>$ go get -u -v github.com/spf13/hugo
+</code></pre>
+
+<p>生成站点
+使用Hugo快速生成站点，比如希望生成到 /path/to/site 路径：</p>
+
+<pre><code>$ hugo new site /path/to/site
+</code></pre>
+
+<p>这样就在 /path/to/site 目录里生成了初始站点，进去目录：</p>
+
+<pre><code>$ cd /path/to/site
+</code></pre>
+
+<p>站点目录结构：</p>
+
+<p>▸ archetypes/
+  ▸ content/
+  ▸ layouts/
+  ▸ static/
+​    config.toml
+config.toml是网站的配置文件，包括baseurl, title, copyright等等网站参数。</p>
+
+<p>这几个文件夹的作用分别是：
+​   archetypes：包括内容类型，在创建新内容时自动生成内容的配置
+​   content：包括网站内容，全部使用markdown格式
+​   layouts：包括了网站的模版，决定内容如何呈现
+​   static：包括了css, js, fonts, media等，决定网站的外观</p>
+
+<p>创建文章
+创建一个 about 页面：</p>
+
+<pre><code>$ hugo new about.md
+</code></pre>
+
+<p>about.md 自动生成到了 content/about.md ，打开 about.md 看下：</p>
+
+<p>+++
+date = &ldquo;2015-10-25T08:36:54-07:00&rdquo;
+draft = true
+title = &ldquo;about&rdquo;</p>
+
+<p>+++</p>
+
+<p>正文内容
+内容是 Markdown 格式的，+++ 之间的内容是 TOML 格式的，根据你的喜好，你可以换成 YAML 格式（使用 &mdash; 标记）或者 JSON 格式。</p>
+
+<p>创建第一篇文章，放到 post 目录，方便之后生成聚合页面。</p>
+
+<pre><code>$ hugo new post/first.md
+</code></pre>
+
+<p>打开编辑 post/first.md ：</p>
+
+<hr />
+
+<p>date: &ldquo;2015-10-25T08:36:54-07:00&rdquo;</p>
+
+<p>title: &ldquo;first&rdquo;</p>
+
+<h3 id="hello-hugo">Hello Hugo</h3>
+
+<ol>
+<li>aaa</li>
+<li>bbb</li>
+<li>ccc
+安装皮肤
+到 皮肤列表 挑选一个心仪的皮肤，比如你觉得 Hyde 皮肤不错，找到相关的 GitHub 地址，创建目录 themes，在 themes 目录里把皮肤 git clone 下来：</li>
+</ol>
+
+<h1 id="创建-themes-目录">创建 themes 目录</h1>
+
+<pre><code>$ cd themes
+$ git clone https://github.com/spf13/hyde.git
+</code></pre>
+
+<p>运行Hugo
+在你的站点根目录执行 Hugo 命令进行调试：</p>
+
+<pre><code>$ hugo server --theme=hyde --buildDrafts
+</code></pre>
+
+<p>（注明：v0.15 版本之后，不再需要使用 &ndash;watch 参数了）</p>
+
+<p>浏览器里打开： <a href="http://localhost:1313">http://localhost:1313</a></p>
+
+<p>部署
+假设你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：coderzh.github.io （coderzh替换为你的github用户名）。</p>
+
+<p>在站点根目录执行 Hugo 命令生成最终页面：</p>
+
+<pre><code>$ hugo --theme=beautifulhugo --baseUrl=&quot;http://blog.debris.cn/&quot;
+</code></pre>
+
+<p>（注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。）</p>
+
+<p>如果一切顺利，所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的Repository的 master 分支。</p>
+
+<pre><code>$ cd public
+$ git init
+$ git remote add origin https://github.com/rockpanda/rockpanda.github.io
+$ git add -A
+$ git commit -m &quot;first commit&quot;
+$ git push -u origin master
+</code></pre>
+
+<p>浏览器里访问：rockpanda.github.io</p>
+
+            </article>
+
+            <ul class="pager blog-pager">
+                
+                <li class="previous">
+                    <a href="http://blog.debris.cn/posts/fabric8-introduction/" data-toggle="tooltip" data-placement="top" title="开源微服务管理平台fabric8简介">&larr; Previous Post</a>
+                </li>
+                 
+            </ul>
+            
+            <div>
+                 
+            </div>
+            
+            
+            
+            
+<div>
+    <section id="datecount">
+        <h4 id="date"> Thu Jan 10, 2019</h4>
+    </section>
+    <h5 id="wc">1800 Words|Read in about 4 Min</h5>
+    <h5 id="tags">Tags: 
+        
+        <a href="http://blog.debris.cntags/hugo/">hugo</a> &nbsp;
+        
+        <a href="http://blog.debris.cntags/blog/">blog</a> &nbsp;
+        
+        <a href="http://blog.debris.cntags/github/">github</a> &nbsp;
+    </h5>
+</div>
+
+            
+            </div>
+            
+            
+        </div>
+    </div>
+    </section>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:balladpanda@gamil.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/rockpanda" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="http://blog.debris.cn/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+        &copy;2017-2018
+          
+            
+              <a href="https://blog.debris.cn">rockpanda(朝俊)</a>
+            
+          
+          
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://blog.debris.cn">Rcokpanda</a>
+          
+        </p>
+
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.48</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/rootsongjc/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/bootstrap.min.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/photoswipe-ui-default.min.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/photoswipe.min.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/auto-render.min.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/main.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/prism.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/katex.min.js"></script>
+<script src="https://res.cloudinary.com/debris/raw/upload/rockpanda/js/demo.js"></script>
+
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+
+
+  </body>
+</html>
+
