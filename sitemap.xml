@@ -3,60 +3,74 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://blog.debris.cn/posts/hugo-installblog-github/</loc>
+    <loc>https://blog.debris.cn/posts/fabric8-introduction/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/posts/fabric8-introduction/</loc>
-    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.debris.cn/categories/</loc>
+    <loc>https://blog.debris.cn/tags/blog/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/tags/devops/</loc>
-    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
+    <loc>https://blog.debris.cn/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/categories/devops/</loc>
+    <loc>https://blog.debris.cn/tags/devops/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/tags/fabric8/</loc>
+    <loc>https://blog.debris.cn/categories/devops/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/tags/platform/</loc>
+    <loc>https://blog.debris.cn/tags/fabric8/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/posts/</loc>
+    <loc>https://blog.debris.cn/tags/github/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.debris.cn/tags/hugo/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.debris.cn/tags/platform/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/</loc>
+    <loc>https://blog.debris.cn/posts/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.debris.cn/tags/</loc>
+    <loc>https://blog.debris.cn/</loc>
     <lastmod>2017-04-10T21:39:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.debris.cn/tags/</loc>
+    <lastmod>2017-04-10T21:39:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.debris.cn/posts/hugo-installblog-github/</loc>
   </url>
   
 </urlset>
