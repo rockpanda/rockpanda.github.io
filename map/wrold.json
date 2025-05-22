@@ -1,5 +1,5 @@
 {
-  "info": "特征集合式geoJson在线测试",
+  "info": "特征集合式geoJson用于微步在线测试",
   "type": "FeatureCollection",
   "offset": {
     "x": 170,
